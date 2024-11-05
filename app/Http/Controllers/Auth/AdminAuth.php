@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\AdminModel;
+
+class AdminAuth extends Controller
+{
+    public function login()
+    {
+        return view('pages.login');
+    }
+
+    public function cekLogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        $admin = AdminModel::where('email', $request->email)->first();
+
+        if (!$admin || !$admin->verifikasiKataSandi()) {
+            return back()->withErrors([
+                'login' => 'Email atau Password salah!!'
+            ])->withInput();
+        }
+
+        session(['admin' => $admin, 'role' => 'admin']);
+        return redirect('/dashboard');
+    }
+}
