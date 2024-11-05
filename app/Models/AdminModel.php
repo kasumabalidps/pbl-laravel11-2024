@@ -15,13 +15,14 @@ class AdminModel extends Model
 
     protected $hidden = ['password'];
 
-    public function verifikasiKataSandi()
+    protected function setPasswordAttribute($value)
     {
-        return password_verify($this->password, $this->attributes['password']);
+        $this->attributes['password'] = bcrypt($value);
     }
 
-    protected function setKataSandiAttribute($value)
+    public function verifKataSandi($password)
     {
-        $this->attributes['password'] = password_hash($value, PASSWORD_BCRYPT);
+        return password_verify($password, $this->attributes['password']);
     }
+
 }

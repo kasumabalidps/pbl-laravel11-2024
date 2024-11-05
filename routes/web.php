@@ -8,5 +8,9 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AdminAuth::class, 'login']);
-Route::get('/login/lupa', [AdminAuth::class, 'lupaPassword']);
 Route::post('/login', [AdminAuth::class, 'cekLogin']);
+Route::get('/login/lupa', [AdminAuth::class, 'lupaPassword']);
+
+Route::get('/dashboard', function () {
+    return view('pages.dashboard');
+});

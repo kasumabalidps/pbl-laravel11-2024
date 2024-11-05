@@ -22,13 +22,13 @@ class AdminAuth extends Controller
 
         $admin = AdminModel::where('email', $request->email)->first();
 
-        if (!$admin || !$admin->verifikasiKataSandi()) {
+        if (!$admin || !$admin->verifKataSandi($request->password)) {
             return back()->withErrors([
                 'login' => 'Email atau Password salah!!'
             ])->withInput();
         }
 
-        session(['admin' => $admin, 'role' => 'admin']);
+        session(['role' => 'admin']);
         return redirect('/dashboard');
     }
 }
