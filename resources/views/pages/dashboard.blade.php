@@ -1,5 +1,5 @@
-@extends('layouts.root')
+@extends('layouts.dashboard')
 
 @section('content')
-    <h1>Role Kamu: {{ session('role') }}</h1>
+    <x-navigation/>
 @endsection
