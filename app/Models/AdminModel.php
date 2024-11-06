@@ -15,6 +15,11 @@ class AdminModel extends Model
 
     protected $hidden = ['password'];
 
+    protected function ambilNamaTable()
+    {
+        return $this->table;
+    }
+
     protected function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);

@@ -41,9 +41,9 @@
                             </button>
                             <div id="dropdownMenu" class="absolute right-[20px] z-50 hidden w-[250px] mt-[5px] bg-white rounded-b-md shadow-lg">
                                 <div class="py-3 border-b " role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
-                                    <button class="dropMenu-list"><i class='text-icon-mobile pr-[20px] bx bxs-cog' ></i>pengaturan</button>
+                                    <button class="dropMenu-list"><i class='text-icon-mobile pr-[20px] bx bxs-cog' ></i>Pengaturan</button>
                                 </div>
-                                    <a href="/" class="dropMenu-list logout" role="menuitem"><i class='text-icon-mobile pr-[20px] bx bx-exit' ></i>keluar</a>
+                                    <a href="/dashboard/logout" class="dropMenu-list logout" role="menuitem"><i class='text-icon-mobile pr-[20px] bx bx-exit' ></i>Keluar</a>
                             </div>
                         </div>
                     </div>

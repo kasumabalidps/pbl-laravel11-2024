@@ -21,7 +21,7 @@ class AdminAuth extends Controller
         ]);
 
         $admin = AdminModel::where('email', $request->email)->first();
-        $table = 'admin';
+        $table = AdminModel::ambilNamaTable();
 
         if (!$admin || !$admin->verifKataSandi($request->password)) {
             return back()->withErrors([

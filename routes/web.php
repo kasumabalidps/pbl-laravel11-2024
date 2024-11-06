@@ -13,3 +13,4 @@ Route::post('/admin/login', [AdminAuth::class, 'cekLogin']);
 
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard_view']);
+Route::get('/dashboard/logout', [DashboardController::class, 'logout']);

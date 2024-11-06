@@ -44,4 +44,10 @@ class DashboardController extends Controller
 
         return view('pages.dashboard', ['nama' => $nama]);
     }
+
+    public function logout()
+    {
+        session()->flush();
+        return redirect('/');
+    }
 }
