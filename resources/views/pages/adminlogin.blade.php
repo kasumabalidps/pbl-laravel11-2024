@@ -6,7 +6,7 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-3xl font-bold mb-1 text-center">Selamat Datang</h1>
         <p class="text-gray-600 mb-8 text-center">
-            Silahkan masukan email, NIP, NIM dan password untuk masuk ke halaman dashboard
+            Silahkan Login Sebagai Admin
         </p>
 
         <!-- Error Alert -->
@@ -30,7 +30,7 @@
             @csrf
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                    Email / NIP / NIM
+                    Email
                 </label>
                 <input
                     type="text"
@@ -84,9 +84,9 @@
         </form>
 
         <div class="mt-4 text-center flex flex-col gap-y-2">
-            <a href="" class="text-sm text-blue-600 hover:underline">
+            {{-- <a href="" class="text-sm text-blue-600 hover:underline">
                 Lupa Password?
-            </a>
+            </a> --}}
             <a href="/" class="text-sm text-blue-600 hover:underline font-bold">
                 Kembali ke Beranda
             </a>

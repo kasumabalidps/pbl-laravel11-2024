@@ -8,9 +8,9 @@ use App\Models\AdminModel;
 
 class AdminAuth extends Controller
 {
-    public function login()
+    public function login_view()
     {
-        return view('pages.login');
+        return view('pages.adminlogin');
     }
 
     public function cekLogin(Request $request)
