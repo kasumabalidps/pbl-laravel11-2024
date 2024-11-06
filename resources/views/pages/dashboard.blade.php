@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <x-navigation/>
+    <x-dashboard.navigation/>
 @endsection

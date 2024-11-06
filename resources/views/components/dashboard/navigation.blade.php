@@ -5,7 +5,7 @@
               <img class="border border-white logo-sidebar" src="img/logo.png" alt="Logo JTI">
               <img class="logo-sidebar" src="img/logo-pnb.png" alt="Logo PNB">
           </div>
-          
+
           <button onclick="closeSidebar()" id="btn-closeSide" class="icons btn color-btn-close"><i class='bx bx-left-arrow-alt' ></i></button>
       </div>
       <div class="pl-[20px]">
@@ -34,7 +34,7 @@
                       <div>
                           <button id="dropdownButton" class="flex-center pt-1 gap-[10px]">
                               <img class="w-[50px] h-[50px] rounded-full" src="https://randomuser.me/api/portraits/women/85.jpg" alt="">
-                              
+
                               <div class="hidden md:flex">
                                   <i class='icons bx bx-chevron-down'></i>
                               </div>
@@ -51,7 +51,7 @@
           </nav>
       </header>
       <div class="mx-[40px] my-[20px]">
-        <x-content />
+        <x-dashboard.content />
       </div>
   </div>
-</div> 
+</div>
