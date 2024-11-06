@@ -10,7 +10,7 @@ class AdminAuth extends Controller
 {
     public function login_view()
     {
-        return view('pages.adminlogin');
+        return view('pages.admin.login');
     }
 
     public function cekLogin(Request $request)
