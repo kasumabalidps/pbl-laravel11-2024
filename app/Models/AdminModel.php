@@ -11,7 +11,7 @@ class AdminModel extends Model
 
     protected $table = 'admin';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama', 'email', 'password'];
+    protected $fillable = ['nama_pengguna', 'email', 'password'];
 
     protected $hidden = ['password'];
 

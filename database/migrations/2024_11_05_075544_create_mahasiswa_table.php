@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id('nim');
-            $table->string('nama', 150);
+            $table->string('nama_pengguna', 150);
+            $table->string('nama_lengkap', 150);
             $table->string('email', 150);
             $table->string('password', 255);
             $table->foreignId('id_kelas')

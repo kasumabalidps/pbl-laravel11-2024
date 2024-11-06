@@ -21,6 +21,7 @@ class AdminAuth extends Controller
         ]);
 
         $admin = AdminModel::where('email', $request->email)->first();
+        $table = 'admin';
 
         if (!$admin || !$admin->verifKataSandi($request->password)) {
             return back()->withErrors([
@@ -28,7 +29,7 @@ class AdminAuth extends Controller
             ])->withInput();
         }
 
-        session(['role' => 'admin']);
+        session(['table' => $table, 'id' => $admin->id]);
         return redirect('/dashboard');
     }
 }

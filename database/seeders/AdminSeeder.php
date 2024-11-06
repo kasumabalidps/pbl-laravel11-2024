@@ -12,7 +12,7 @@ class AdminSeeder extends Seeder
         AdminModel::truncate();
 
         AdminModel::create([
-            'nama' => 'Administrator',
+            'nama_pengguna' => 'Administrator',
             'email' => 'admin@admin.com',
             'password' => 'password123'
         ]);

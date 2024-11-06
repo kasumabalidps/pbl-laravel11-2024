@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->id('id');
-            $table->string('nama', 150);
+            $table->string('nama_pengguna', 150);
             $table->string('email', 150);
             $table->string('password', 255);
             $table->timestamps();
