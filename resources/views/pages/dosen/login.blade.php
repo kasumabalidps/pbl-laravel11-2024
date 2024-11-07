@@ -6,7 +6,7 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-3xl font-bold mb-1 text-center">Selamat Datang</h1>
         <p class="text-gray-600 mb-8 text-center">
-            Silahkan Login Sebagai Mahasiswa
+            Silahkan Login Sebagai Dosen
         </p>
 
         <!-- Error Alert -->
@@ -34,8 +34,8 @@
                 </label>
                 <input
                     type="text"
-                    id="nim"
-                    name="nim"
+                    id="nip"
+                    name="nip"
                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                 />

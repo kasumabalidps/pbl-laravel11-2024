@@ -19,5 +19,10 @@ class DosenModel extends Model
     {
         return $this->table;
     }
+
+    protected function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminModel;
+use App\Models\MahasiswaModel;
+use App\Models\DosenModel;
 
 class DashboardController extends Controller
 {
@@ -31,12 +33,12 @@ class DashboardController extends Controller
                 $nama = $admin->nama_pengguna;
             }
         } elseif ($role === 'mahasiswa') {
-            $mahasiswa = AdminModel::find($id);
+            $mahasiswa = MahasiswaModel::find($id);
             if ($mahasiswa) {
                 $nama = $mahasiswa->nama_pengguna;
             }
         } elseif ($role === 'dosen') {
-            $dosen = AdminModel::find($id);
+            $dosen = DosenModel::find($id);
             if ($dosen) {
                 $nama = $dosen->nama_pengguna;
             }

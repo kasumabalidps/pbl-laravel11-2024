@@ -11,11 +11,11 @@ class CreateProdiTable extends Migration
         Schema::create('prodi', function (Blueprint $table) {
             $table->id('id_prodi');
             $table->string('prodi', 50)->nullable(false);
-            $table->timestamps();
             $table->foreignId('id_jurusan')
                 ->references('id_jurusan')
                 ->on('jurusan')
                 ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
