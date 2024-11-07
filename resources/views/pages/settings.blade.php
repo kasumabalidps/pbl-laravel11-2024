@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <x-dashboard.setting/>
+    <x-dashboard.setting :nama="$nama" />
 @endsection

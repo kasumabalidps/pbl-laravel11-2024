@@ -9,40 +9,29 @@ use App\Models\DosenModel;
 
 class DashboardController extends Controller
 {
+    private function getUserNameByRole($id, $role)
+    {
+        $models = [
+            'admin' => AdminModel::class,
+            'mahasiswa' => MahasiswaModel::class,
+            'dosen' => DosenModel::class
+        ];
+
+        $model = $models[$role] ?? null;
+        $user = $model ? $model::find($id) : null;
+
+        return $user ? $user->nama_pengguna : 'Tidak Ditemukan';
+    }
+
     public function dashboard_view()
     {
-        // Set role berdasarkan table di session
-        $table = session('table');
-        if (in_array($table, ['admin', 'mahasiswa', 'dosen'])) {
-            session(['role' => $table]);
-        }
+        $this->setRoleFromSession();
 
-        // Redirect jika role tidak valid
-        if (!in_array(session('role'), ['admin', 'mahasiswa', 'dosen'])) {
+        if (!$this->isValidRole(session('role'))) {
             return redirect('/');
         }
 
-        // Ambil data user berdasarkan role
-        $id = session('id');
-        $nama = 'Tidak Ditemukan';
-        $role = session('role');
-
-        if ($role === 'admin') {
-            $admin = AdminModel::find($id);
-            if ($admin) {
-                $nama = $admin->nama_pengguna;
-            }
-        } elseif ($role === 'mahasiswa') {
-            $mahasiswa = MahasiswaModel::find($id);
-            if ($mahasiswa) {
-                $nama = $mahasiswa->nama_pengguna;
-            }
-        } elseif ($role === 'dosen') {
-            $dosen = DosenModel::find($id);
-            if ($dosen) {
-                $nama = $dosen->nama_pengguna;
-            }
-        }
+        $nama = $this->getUserNameByRole(session('id'), session('role'));
 
         return view('pages.dashboard', ['nama' => $nama]);
     }
@@ -55,8 +44,21 @@ class DashboardController extends Controller
 
     public function settings()
     {
-        return view('pages.settings');
+        $nama = $this->getUserNameByRole(session('id'), session('role'));
+        
+        return view('pages.settings', ['nama' => $nama]);
     }
 
-    
+    private function setRoleFromSession()
+    {
+        $table = session('table');
+        if ($this->isValidRole($table)) {
+            session(['role' => $table]);
+        }
+    }
+
+    private function isValidRole($role)
+    {
+        return in_array($role, ['admin', 'mahasiswa', 'dosen']);
+    }
 }
