@@ -11,7 +11,7 @@
         <div class="pl-[20px]">
             <span class="span-menu">menu</span>
             <ul class="menu-sidebar">
-                    <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
+                    <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
                     <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
                     <li class="flex flex-col ">
                         <button  id="btn-subMenu" class="hover:bg-[#4545C1] flex-center w-[250px] py-2 px-4 rounded-lg"> 

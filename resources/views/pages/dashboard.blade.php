@@ -1,4 +1,3 @@
 @extends('layouts.dashboard')
-
-    <x-dashboard.navigation :nama="$nama" />
+<x-dashboard.navigation :nama="$nama" />
 
