@@ -41,7 +41,7 @@
                     <div class="flex gap-[15px]">
                         <div class="hidden md:flex-col md:flex">
                             <!-- menampilkan nama panggilan pengguna -->
-                            {{-- <h1 class="font-semibold text-right text-mobile-heading">{{ $nama }}</h1> --}}
+                            <h1 class="font-semibold text-right text-mobile-heading">{{ $nama }}</h1>
                              <!-- Menampilkabn Role seperti "mahasiswa 3C TRPL" -->
                             <span class="font-normal ">{{ session('role') }}</span>
                         </div>
