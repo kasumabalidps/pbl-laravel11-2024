@@ -8,6 +8,9 @@
     @vite(['resources/css/app.css', 'resources/js/dashboard.js'])
 </head>
 <body>
-    @include('components.dashboard.navigation')
+    <x-dashboard.navigation :nama="$nama" />
+    <div class="mx-[20px] my-[20px] lg:mx-[40px]">
+        @yield('content')
+    </div>
 </body>
 </html>

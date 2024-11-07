@@ -14,7 +14,7 @@
                     <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
                     <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
                     <li class="flex flex-col ">
-                        <button  id="btn-subMenu" class="hover:bg-[#4545C1] flex-center w-[250px] py-2 px-4 rounded-lg"> 
+                        <button  id="btn-subMenu" class="hover:bg-[#4545C1] flex-center w-[250px] py-2 px-4 rounded-lg">
                             <i class='icons pr-[20px] bx bxs-book-bookmark'></i>
                             <span class="capitalize">manajemen akun</span>
                             <i class='pl-[5px] icons arrow bx bxs-chevron-down'></i>
@@ -25,7 +25,7 @@
                         </ul>
                     </li>
                     <li class="hover:bg-[#4545C1] "><a  href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-bug'></i>laporan</a></li>
-                    
+
             </ul>
 
         </div>
