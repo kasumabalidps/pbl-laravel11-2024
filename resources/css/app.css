@@ -5,3 +5,179 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply bg-[#F4F4F4] font-roboto text-mobile-base md:text-tablet-base lg:text-desktop-base;
+    }
+    
+}
+
+@layer components {
+
+    .b-container {
+        @apply max-w-[1100px] w-[calc(100%-2rem)] mx-auto;
+    }
+
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+
+    .title-section {
+        @apply font-medium text-[22px] mb-[10px] lg:text-[30px];
+    }
+
+    .subtitle-section {
+        @apply text-[18px] font-medium lg:text-[24px]
+    }
+
+    .btn {
+        @apply w-[35px] h-[35px] p-[20px] flex-center rounded-md
+    }
+    .btn-full { 
+        @apply w-[35px] h-[35px] rounded-full;
+    }
+    
+    .icons {
+        @apply flex-center text-icon-mobile font-normal;
+    }
+
+    .cards {
+        @apply 
+    }
+
+    /* komponen navigation */
+
+    /* komponen settings */
+    
+    .label-form {
+        @apply text-[15px] lg:text-[18px]
+    }
+
+    .input-form {
+        @apply block h-[30px] ring-[#798AE8] ring-1 rounded-md mb-[15px] p-1 focus:ring-2 focus:border-blue-500 focus:outline-none bg-[#E1E3FF] text-gray-600
+    }
+    /* tutup komponen settings */
+    
+    /* welcome home */
+    .navList-welcome {
+        @apply text-gray-600 hover:text-gray-400 font-semibold relative inline-block;
+    }
+    .navList-welcome::after {
+        @apply content-[''] absolute rounded-xl -bottom-0.5 left-0 w-0 h-[2px] bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-500 ease-in-out;
+    }
+    .navList-welcome:hover::after {
+        @apply w-full;
+    }
+    
+}
+
+@layer utilities {
+    /* komponen navigation */
+    .l-navbar {
+        @apply w-full bg-white shadow-lg;
+    }
+    
+    .nav {
+        @apply flex justify-between items-center h-[80px] md:h-[70px];
+    }
+
+    .sidebar {
+        @apply fixed lg:static z-10 left-[-300px] flex flex-col w-full max-w-[300px]  bg-[#2D2D91] h-screen text-white transition-all duration-300;
+    }
+
+    .color-btn-menu {
+        @apply bg-[#2D2D91] text-white text-[30px] lg:opacity-0 lg:pointer-events-none;
+    }    
+
+    .color-btn-navbar {
+        @apply text-[#424242] bg-[#EBEBEB]
+    }
+
+    .color-btn-close {
+        @apply hover:bg-[#4545C1] text-[30px] lg:opacity-0 lg:pointer-events-none;
+    }
+
+    .logo-sidebar {
+        @apply w-[40px] h-[40px] rounded-full;
+    }
+
+    .menu-sidebar {
+        @apply *:flex *:justify-start *:items-center *:my-[12px] *:py-2 *:px-4 *:text-[16px] *:md:text-[18px] *:font-medium *:w-[250px] *:rounded-lg
+    }
+
+    .span-menu {
+        @apply text-[20px] px-4 font-light pb-[15px]
+    }
+
+    .dropMenu-list {
+        @apply flex items-center px-4 py-2 text-[20px] font-medium text-gray-700 hover:text-[#2D2D91];
+    }
+
+    .logout {
+        @apply text-[#D83538] hover:text-[#B52628];
+    }
+
+
+    .sub-menu {
+        @apply *:py-2 *:px-4 *:rounded-lg hidden
+    }
+
+    .sub-menu.show {
+        @apply block
+    }
+    /* tutup komponen navigation */
+
+
+    /* halaman file welcome */
+    .nav-welcome {
+        @apply w-full px-6 py-4 bg-blue-900 shadow-md relative top-0 z-[90px];
+    }
+    
+    .mobile-navList {
+        @apply block pl-2 py-3 font-semibold text-gray-600 transition duration-200 rounded-md hover:text-gray-900 hover:bg-gray-100;
+    }
+    .mobile-menu {
+        @apply transition-all duration-300;
+    }
+    /* tutup halaman file welcome */
+}
+
+#mobile-menu {
+    transform: translateY(-100%);
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 40;
+}
+
+#mobile-menu.active {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+    visibility: visible;
+    transition: clip-path 0.3s ease-in-out;
+}
+
+.fade-slide-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.fade-slide-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+}
+.fade-slide-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-slide-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 500ms, transform 500ms;
+}

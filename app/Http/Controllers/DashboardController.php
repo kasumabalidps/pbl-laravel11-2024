@@ -50,4 +50,11 @@ class DashboardController extends Controller
         session()->flush();
         return redirect('/');
     }
+
+    public function settings()
+    {
+        return view('pages.settings');
+    }
+
+    
 }

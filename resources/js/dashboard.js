@@ -8,10 +8,16 @@ function closeSidebar() {
   sidebar.style.left = '-350px'; // Menyembunyikan sidebar
 }
 
+function openSubMenu(){
+  const subMenu = document.getElementById('subMenu');
+  subMenu.classList.toggle('show');
+}
+
 // Menambahkan event listener setelah DOM siap
 document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.getElementById('btn-menu');
   const closeBtn = document.getElementById('btn-closeSide');
+  const subMenuBtn = document.getElementById('btn-subMenu');
   
   if (menuBtn) {
       menuBtn.addEventListener('click', openSidebar); // Buka sidebar
@@ -20,7 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
   if (closeBtn) {
       closeBtn.addEventListener('click', closeSidebar); // Tutup sidebar
   }
+
+  if (subMenuBtn) {
+      subMenuBtn.addEventListener('click', openSubMenu);
+    
+  }
 });
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownButton = document.getElementById("dropdownButton");
