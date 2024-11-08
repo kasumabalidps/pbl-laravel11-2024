@@ -13,15 +13,16 @@ Route::get('/', function () {
 Route::get('/admin/login', [AdminAuth::class, 'login_view']);
 Route::post('/admin/login', [AdminAuth::class, 'cekLogin']);
 
-Route::get('/mahasiswa/login', [MahasiswaAuth::class, 'login_view']);    
+Route::get('/mahasiswa/login', [MahasiswaAuth::class, 'login_view']);
 Route::post('/mahasiswa/login', [MahasiswaAuth::class, 'cekLogin']);
 
 Route::get('/dosen/login', [DosenAuth::class, 'login_view']);
 Route::post('/dosen/login', [DosenAuth::class, 'cekLogin']);
 
-
-Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('dashboard');
-Route::get('/dashboard/settings', [DashboardController::class, 'settings'])->name('dashboard.settings');
-Route::get('/dashboard/logout', [DashboardController::class, 'logout']);
+Route::middleware(['roleHandler'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('dashboard');
+    Route::get('/dashboard/settings', [DashboardController::class, 'settings'])->name('dashboard.settings');
+    Route::get('/dashboard/logout', [DashboardController::class, 'logout']);
+});
 
 

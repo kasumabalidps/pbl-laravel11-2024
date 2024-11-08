@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
+
 use App\Models\AdminModel;
 use App\Models\MahasiswaModel;
 use App\Models\DosenModel;
@@ -25,14 +28,7 @@ class DashboardController extends Controller
 
     public function dashboard_view()
     {
-        $this->setRoleFromSession();
-
-        if (!$this->isValidRole(session('role'))) {
-            return redirect('/');
-        }
-
         $nama = $this->getUserNameByRole(session('id'), session('role'));
-
         return view('pages.dashboard', ['nama' => $nama]);
     }
 
@@ -45,20 +41,7 @@ class DashboardController extends Controller
     public function settings()
     {
         $nama = $this->getUserNameByRole(session('id'), session('role'));
-        
+
         return view('pages.settings', ['nama' => $nama]);
-    }
-
-    private function setRoleFromSession()
-    {
-        $table = session('table');
-        if ($this->isValidRole($table)) {
-            session(['role' => $table]);
-        }
-    }
-
-    private function isValidRole($role)
-    {
-        return in_array($role, ['admin', 'mahasiswa', 'dosen']);
     }
 }
