@@ -1,6 +1,6 @@
 <div class="flex h-screen capitalize">
     <aside id="sidebar" class="sidebar">
-        <div class="flex justify-between items-center px-[20px] pt-[20px] pb-[110px]">
+        <div class="flex justify-between items-center px-[20px] pt-[20px] pb-[70px]">
             <div class="flex gap-4">
                 <img class="border border-white logo-sidebar" src="/img/logo.png" alt="Logo JTI">
                 <img class="logo-sidebar" src="/img/logo-pnb.png" alt="Logo PNB">
@@ -20,12 +20,38 @@
                             <i class='pl-[5px] icons arrow bx bxs-chevron-down'></i>
                         </button>
                         <ul id="subMenu" class="sub-menu">
-                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
-                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
+                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>dosen</a></li>
+                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>mahasiswa</a></li>
                         </ul>
                     </li>
                     <li class="hover:bg-[#4545C1] "><a  href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-bug'></i>laporan</a></li>
 
+
+                    {{-- logic menu setiap role --}}
+                    {{-- tambah jika kurang, kalau ubah infoin dulu --}}
+                    {{-- @if (session('role') === 'admin')
+                        <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
+                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
+                        <li class="flex flex-col ">
+                            <button  id="btn-subMenu" class="hover:bg-[#4545C1] flex-center w-[250px] py-2 px-4 rounded-lg">
+                                <i class='icons pr-[20px] bx bxs-book-bookmark'></i>
+                                <span class="capitalize">manajemen akun</span>
+                                <i class='pl-[5px] icons arrow bx bxs-chevron-down'></i>
+                            </button>
+                            <ul id="subMenu" class="sub-menu">
+                                <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
+                                <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
+                            </ul>
+                        </li>
+                        <li class="hover:bg-[#4545C1] "><a  href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-bug'></i>laporan</a></li>
+                    @elseif (session('role') === 'dosen')
+                        <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
+                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i></a></li>
+                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>buat kuis</a></li>
+                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>status pengerjaan</a></li>
+                    @elseif (session('role') === 'mahasiswa')
+                    
+                    @endif --}}
             </ul>
 
         </div>

@@ -9,8 +9,8 @@
 </head>
 <body>
     <x-dashboard.navigation :nama="$nama" />
-    <div class="mx-[20px] my-[20px] lg:mx-[40px]">
+    {{-- <div class="mx-[20px] my-[20px] lg:mx-[40px]">
         @yield('content')
-    </div>
+    </div> --}}
 </body>
 </html>

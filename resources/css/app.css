@@ -82,7 +82,7 @@
     }
 
     .sidebar {
-        @apply fixed lg:static z-10 left-[-300px] flex flex-col w-full max-w-[300px]  bg-[#2D2D91] h-screen text-white transition-all duration-300;
+        @apply fixed lg:static z-10 left-[-300px] flex flex-col w-full max-w-[300px] bg-[#2D2D91] h-screen text-white transition-all duration-300;
     }
 
     .color-btn-menu {

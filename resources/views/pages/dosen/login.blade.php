@@ -1,17 +1,16 @@
-
 @extends('layouts.root')
 
 @section('content')
-<div class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 class="text-3xl font-bold mb-1 text-center">Selamat Datang</h1>
-        <p class="text-gray-600 mb-8 text-center">
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+        <h1 class="mb-1 text-3xl font-bold text-center">Selamat Datang</h1>
+        <p class="mb-8 text-center text-gray-600">
             Silahkan Login Sebagai Dosen
         </p>
 
         <!-- Error Alert -->
         @if ($errors->any())
-            <div id="alert" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <div id="alert" class="relative px-4 py-3 mb-4 text-red-700 bg-red-100 border border-red-400 rounded" role="alert">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -29,7 +28,7 @@
         <form action="" method="POST">
             @csrf
             <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                <label for="email" class="block mb-1 text-sm font-medium text-gray-700">
                     NIM/NIP
                 </label>
                 <input
@@ -42,7 +41,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+                <label for="password" class="block mb-1 text-sm font-medium text-gray-700">
                     Password
                 </label>
                 <div class="relative">
@@ -56,9 +55,9 @@
                     <button
                         type="button"
                         onclick="togglePasswordVisibility()"
-                        class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                        class="absolute inset-y-0 right-0 flex items-center pr-3"
                     >
-                        <i class="fas fa-eye text-gray-500" id="password-icon"></i>
+                        <i class="text-gray-500 fas fa-eye" id="password-icon"></i>
                     </button>
                 </div>
             </div>
@@ -68,26 +67,26 @@
                     type="checkbox"
                     id="remember"
                     name="remember"
-                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                 />
-                <label for="remember" class="ml-2 block text-sm text-gray-700">
+                <label for="remember" class="block ml-2 text-sm text-gray-700">
                     Ingat saya?
                 </label>
             </div>
 
             <button
                 type="submit"
-                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                class="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
                 Masuk
             </button>
         </form>
 
-        <div class="mt-4 text-center flex flex-col gap-y-2">
+        <div class="flex flex-col mt-4 text-center gap-y-2">
             {{-- <a href="" class="text-sm text-blue-600 hover:underline">
                 Lupa Password?
             </a> --}}
-            <a href="/" class="text-sm text-blue-600 hover:underline font-bold">
+            <a href="/" class="text-sm font-bold text-blue-600 hover:underline">
                 Kembali ke Beranda
             </a>
         </div>
