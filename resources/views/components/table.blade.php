@@ -11,7 +11,16 @@
                   <th scope="col" class="px-6 py-3">Kelas</th>
                   <th scope="col" class="px-6 py-3">Prodi</th>
                   <th scope="col" class="px-6 py-3">Aksi</th>
-                
+
+                  
+                  {{-- @foreach ($columns as $column)
+                    <th scope="col" class="px-6 py-3">{{ $column }}</th>
+                    @endforeach
+                    
+                    =====tambahin logic=====
+                    @if (session())
+                    <th scope="col" class="px-6 py-3">Aksi</th>
+                    @endif --}}
               </tr>
           </thead>
           <tbody>
@@ -21,9 +30,25 @@
                   <td class="px-6 py-4">3F</td>
                   <td class="px-6 py-4">Jaringan</td>
                   <td class="px-6 py-4">
-                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ubah</a>
                   </td>
               </tr>
+              
+              {{-- @foreach ($data as $row)
+                    <tr class="odd:bg-white even:bg-gray-50 dark:border-gray-700">
+                        @foreach ($row as $cell)
+                            <td class="px-6 py-4">{{ $cell }}</td>
+                        @endforeach
+                        
+                        =====tambahin logic=====
+                        @if (session())
+                        <td class="px-6 py-4">
+                          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ubah</a>
+                          <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">hapus</a>
+                      </td>
+                        @endif
+                    </tr>
+                @endforeach --}}
             
             </tbody>
       </table>

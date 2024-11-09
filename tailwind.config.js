@@ -32,6 +32,7 @@ export default {
               },
               screens: {
                 'md': '650px',
+                'md-max': '760px',
                 'lg-lite': '930px'
               }
         },

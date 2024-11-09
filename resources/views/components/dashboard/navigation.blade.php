@@ -11,8 +11,7 @@
         <div class="pl-[20px]">
             <span class="span-menu">menu</span>
             <ul class="menu-sidebar">
-                    <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
-                    <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
+                    <li class="hover:bg-[#4545C1] "><a href="{{ route('dashboard') }}" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
                     <li class="flex flex-col ">
                         <button  id="btn-subMenu" class="hover:bg-[#4545C1] flex-center w-[250px] py-2 px-4 rounded-lg">
                             <i class='icons pr-[20px] bx bxs-book-bookmark'></i>
@@ -20,8 +19,8 @@
                             <i class='pl-[5px] icons arrow bx bxs-chevron-down'></i>
                         </button>
                         <ul id="subMenu" class="sub-menu">
-                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>dosen</a></li>
-                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>mahasiswa</a></li>
+                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex text-[18px]"><i class='icons pr-[20px] bx bxs-face'></i>dosen</a></li>
+                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bx-face'></i>mahasiswa</a></li>
                         </ul>
                     </li>
                     <li class="hover:bg-[#4545C1] "><a  href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-bug'></i>laporan</a></li>
@@ -31,7 +30,6 @@
                     {{-- tambah jika kurang, kalau ubah infoin dulu --}}
                     {{-- @if (session('role') === 'admin')
                         <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
-                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
                         <li class="flex flex-col ">
                             <button  id="btn-subMenu" class="hover:bg-[#4545C1] flex-center w-[250px] py-2 px-4 rounded-lg">
                                 <i class='icons pr-[20px] bx bxs-book-bookmark'></i>
@@ -39,18 +37,18 @@
                                 <i class='pl-[5px] icons arrow bx bxs-chevron-down'></i>
                             </button>
                             <ul id="subMenu" class="sub-menu">
-                                <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
-                                <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-data'></i>data pengguna</a></li>
+                                <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex text-[18px]"><i class='icons pr-[20px] bx bxs-face'></i>dosen</a></li>
+                            <li class="hover:bg-[#4545C1] ml-[10px] my-[10px]"><a href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bx-face'></i>mahasiswa</a></li>
                             </ul>
                         </li>
                         <li class="hover:bg-[#4545C1] "><a  href="" class="flex-center text-[18px]"><i class='icons pr-[20px] bx bxs-bug'></i>laporan</a></li>
                     @elseif (session('role') === 'dosen')
                         <li class="hover:bg-[#4545C1] "><a href="/dashboard" class="flex-center "><i class='icons pr-[20px] bx bxs-home'></i>beranda</a></li>
-                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i></a></li>
                         <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>buat kuis</a></li>
                         <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>status pengerjaan</a></li>
                     @elseif (session('role') === 'mahasiswa')
-                    
+                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>test</a></li>
+                        <li class="hover:bg-[#4545C1] "><a href="" class="flex-center "><i class='icons pr-[20px] bx bxs-data'></i>test</a></li>
                     @endif --}}
             </ul>
 
